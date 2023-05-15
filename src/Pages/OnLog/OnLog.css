@@ -1,5 +1,3 @@
-.OnLog {}
-
 .welcome_msg {
     text-align: center;
     color: #fff;
@@ -24,6 +22,12 @@
     text-align: center;
     background: #fff;
     padding: 50px 40px 40px 40px;
+    border: 1px solid grey;
+    cursor: pointer;
+}
+
+.buyAndUse button:not([disabled]) {
+    border: 1px solid #F7D060;
 }
 
 .buyAndUse button:nth-of-type(even) {
@@ -34,7 +38,6 @@
     display: block;
     margin: 0 auto 10px;
 }
-
 
 .User_ico {
     display: flex;
@@ -63,11 +66,13 @@
     width: 100%;
     border: 1px solid black;
     border-bottom: 0 none;
+    cursor: pointer;
 }
 
 .buyAndUse button:disabled {
     background-color: lightgray;
     color: darkgray;
+    pointer-events: none;
 }
 
 .buyAndUse button:disabled img {

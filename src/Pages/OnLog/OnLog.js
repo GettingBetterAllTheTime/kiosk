@@ -19,10 +19,70 @@ const OnLog = ({ setIsLoggedIn }) => {
             <div>
                 <p className="welcome_msg">{userInfo.username}회원님 환영합니다. 원하시는 서비스를 선택해 주세요.</p>
                 <div className="buyAndUse">
-                    <button className="use_time"><img src={process.env.PUBLIC_URL + '/img/use_time.png'} />시간권이용</button>
-                    <button className="use_period"><img src={process.env.PUBLIC_URL + '/img/use_period.png'} />기간권이용</button>
-                    <button className="buy_time"><img src={process.env.PUBLIC_URL + '/img/buy_time.png'} />시간권구입</button>
-                    <button className="buy_period"><img src={process.env.PUBLIC_URL + '/img/buy_period.png'} />기간권구입</button>
+                    {!userInfo.userValid && userInfo.userType.termType === "G" && (
+                        <>
+                            <button className="use_time" disabled>
+                                <img src={process.env.PUBLIC_URL + '/img/use_time.png'} />시간권이용
+                            </button>
+                            <button className="use_period" disabled>
+                                <img src={process.env.PUBLIC_URL + '/img/use_period.png'} />기간권이용
+                            </button>
+                            <button className="buy_time">
+                                <img src={process.env.PUBLIC_URL + '/img/buy_time.png'} />시간권구입
+                            </button>
+                            <button className="buy_period">
+                                <img src={process.env.PUBLIC_URL + '/img/buy_period.png'} />기간권구입
+                            </button>
+                        </>
+                    )}
+                    {!userInfo.userValid && userInfo.userType.termType === "T" && (
+                        <>
+                            <button className="use_time" disabled>
+                                <img src={process.env.PUBLIC_URL + '/img/use_time.png'} />시간권이용
+                            </button>
+                            <button className="use_period" disabled>
+                                <img src={process.env.PUBLIC_URL + '/img/use_period.png'} />기간권이용
+                            </button>
+                            <button className="buy_time">
+                                <img src={process.env.PUBLIC_URL + '/img/buy_time.png'} />시간권구입
+                            </button>
+                            <button className="buy_period">
+                                <img src={process.env.PUBLIC_URL + '/img/buy_period.png'} />기간권구입
+                            </button>
+                        </>
+                    )}
+                    {userInfo.userValid && userInfo.userType.termType === "T" && (
+                        <>
+                            <button className="use_time">
+                                <img src={process.env.PUBLIC_URL + '/img/use_time.png'} />시간권이용
+                            </button>
+                            <button className="use_period" disabled>
+                                <img src={process.env.PUBLIC_URL + '/img/use_period.png'} />기간권이용
+                            </button>
+                            <button className="buy_time" disabled>
+                                <img src={process.env.PUBLIC_URL + '/img/buy_time.png'} />시간권구입
+                            </button>
+                            <button className="buy_period" disabled>
+                                <img src={process.env.PUBLIC_URL + '/img/buy_period.png'} />기간권구입
+                            </button>
+                        </>
+                    )}
+                    {userInfo.userValid && userInfo.userType.termType === "G" && (
+                        <>
+                            <button className="use_time" disabled>
+                                <img src={process.env.PUBLIC_URL + '/img/use_time.png'} />시간권이용
+                            </button>
+                            <button className="use_period">
+                                <img src={process.env.PUBLIC_URL + '/img/use_period.png'} />기간권이용
+                            </button>
+                            <button className="buy_time" disabled>
+                                <img src={process.env.PUBLIC_URL + '/img/buy_time.png'} />시간권구입
+                            </button>
+                            <button className="buy_period" disabled>
+                                <img src={process.env.PUBLIC_URL + '/img/buy_period.png'} />기간권구입
+                            </button>
+                        </>
+                    )}
                 </div>
             </div>
             <div className="User_ico">
