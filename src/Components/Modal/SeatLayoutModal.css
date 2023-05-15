@@ -1,0 +1,77 @@
+.SeatLayoutModal {
+    width: 680px;
+    height: 850px;
+    background: #6b6a81;
+    text-align: center;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.SeatLayoutModal_header {
+    background: #F7D060;
+    height: 50px;
+    line-height: 50px;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.SeatLayoutModal_content {
+    margin-top: 100px;
+    display: grid;
+    grid-template-columns: repeat(12, 26px);
+    grid-template-Rows: repeat(12, 26px);
+    font-size: 11px;
+    justify-content: center;
+    gap: 10px;
+}
+
+.SeatLayoutModal_btn {
+    width: 100%;
+    padding: 20px;
+    background: #ACB1D6;
+    color: #fff;
+    font-size: 20px;
+    font-weight: bold;
+    border: 0;
+    position: fixed;
+    left: 50%;
+    bottom: 0;
+    transform: translateX(-50%);
+}
+
+.SeatLayoutModal button {
+    width: 100%;
+    padding: 20px;
+    background: #ACB1D6;
+    color: #fff;
+    font-size: 20px;
+    font-weight: bold;
+    border: 0;
+    position: fixed;
+    left: 50%;
+    bottom: 0;
+    transform: translateX(-50%);
+}
+
+.containerSub {
+    display: flex;
+    width: 100%;
+    height: 12%;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    margin-top: 16px;
+    margin-bottom: 42px;
+
+}
+
+.containerSub p {
+    color: #fff;
+    margin-left: 5px;
+}
+
+.subtitles{
+    display: flex;
+    align-items: center;
+}

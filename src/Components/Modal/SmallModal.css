@@ -1,0 +1,52 @@
+.SmallModal {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 60%;
+}
+
+.SmallModal_innerbox {
+    background: #fff;
+}
+
+.SmallModal_innerbox_header {
+    background: #F7D060;
+    padding: 10px;
+}
+
+.SmallModal_innnerbox_content {
+    width: 100%;
+    padding: 10px;
+}
+
+.SmallModal_innnerbox_content p {
+    text-align: center;
+    padding: 20px 10px 40px 10px;
+    color: #6b6a81;
+}
+
+.SmallModal_innnerbox_content input {
+    width: 400px;
+    border: 2px solid skyblue;
+    padding: 10px;
+    margin-bottom: 30px;
+}
+
+.SmallModal_innnerbox_content_btns {
+    display: flex;
+    gap: 6px;
+}
+
+.SmallModal_innnerbox_content_btns_btn {
+    width: 50%;
+    padding: 10px;
+    background: skyblue;
+    border: 0 none;
+    color: #fff;
+    font-weight: bold;
+}
+
+.SmallModal_innnerbox_content_btns_btn:nth-child(2) {
+    background: #ACB1D6;
+}

@@ -1,0 +1,110 @@
+.SignUp_nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #F7D060;
+    height: 50px;
+}
+
+.SignUp>h3 {
+    padding: 25px;
+    margin-top: 30px;
+    margin-bottom: 20px;
+    text-align: center;
+    color: #F7D060;
+    font-size: 24px;
+}
+
+.SignUp_nav h3 {
+    display: flex;
+    align-items: center;
+    padding: 25px;
+    text-align: center;
+    color: #333;
+    font-size: 20px;
+}
+
+.SignUp_nav h3 img {
+    margin-right: 6px;
+    width: 30px;
+}
+
+.SignUp_nav div {
+    padding: 25px;
+}
+
+.SignUp img {
+    width: 22px;
+    vertical-align: middle;
+}
+
+.SignUp_inputs {
+    width: 80%;
+    margin: 0 auto;
+
+}
+
+.SignUp_input {
+    display: flex;
+    margin-bottom: 20px;
+}
+
+input[type=checkbox] {
+    margin-right: 10px;
+    width: 24px;
+}
+
+.SignUp_inputs>div:last-child {
+    margin-top: 30px;
+}
+
+.SignUp label {
+    color: #F7D060;
+    font-weight: bold;
+    font-size: 14px;
+}
+
+
+.SignUp_input input {
+    justify-content: start;
+}
+
+.SignUp_input label {
+    width: 80%;
+    background: #fff;
+    color: grey;
+    vertical-align: middle;
+    justify-content: center;
+    line-height: 60px;
+    padding-left: 20px;
+}
+
+.SignUp_input button {
+    width: 20%;
+    padding: 22px;
+    background: skyblue;
+    border: 0 none;
+    vertical-align: middle;
+    justify-content: end;
+    font-size: 12px;
+    color: #fff;
+    font-weight: bold;
+}
+
+.prevNextBtn {
+    margin-top: 225px;
+}
+
+.prevNextBtn button {
+    background: #F7D060;
+    width: 50%;
+    height: 80px;
+    border: 1px solid black;
+    border-bottom: 0 none;
+}
+
+label[for=acceptAll] {
+    background: transparent;
+    color :#F7D060;
+    padding-left: 0;
+}

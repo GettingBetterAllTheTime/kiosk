@@ -1,0 +1,12 @@
+.Notice {
+    margin: 10px;
+    margin-bottom: 154px;
+    padding: 10px;
+}
+
+.Notice p {
+    margin: 10px;
+    color: #fff;
+    font-size: 14px;
+    font-weight: bold;
+}
