@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import './App.css';
-import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Container from './Components/UI/Container';
 import Main from "./Pages/Main/Main";
 import SignUp from './Pages/SignUp/SignUp';
@@ -18,6 +18,8 @@ function App() {
     userType: { termType: "", period: "" },
     userValid: false,
   });
+  // 0은 아이디인풋에 포커스된 상태, 1은 비밀번호인풋에 포커스된 상태
+  // const [focus, setFocus] = useState(0);
 
   const contextValue = {
     modal,
@@ -26,7 +28,7 @@ function App() {
     setInput: () => { },
     //userType : "G"(기간권),"T"(시간권)
     userInfo,
-    setUserInfo
+    setUserInfo,
   };
 
   return (
