@@ -15,7 +15,7 @@ const Login = () => {
     const [showKeyBoard, setShowKeyBoard] = useState(false);
     const [phoneInputValue, setPhoneInputValue] = useState('');
     const [passwordInputValue, setPasswordInputValue] = useState('');
-    // const [flag, setFlag] = useState()
+    const [focusPoint, setFocusPoint] = useState(0);
     const [isLoggedIn, setIsLoggedIn] = useState(false);
     const { userInfo, setUserInfo } = useContext(MyContext);
 
@@ -26,10 +26,12 @@ const Login = () => {
 
     const handlePhoneInputClick = () => {
         setShowKeyBoard(true);
+        setFocusPoint(0);
     };
 
     const handlePasswordInputClick = () => {
         setShowKeyBoard(true);
+        setFocusPoint(1);
     };
 
     const handlePhoneInputChange = (event) => {
@@ -58,10 +60,13 @@ const Login = () => {
                 //최근 시간권이용자 : 시간 이용 가능
                 //최근 시간권이용자 : 시간 만료
                 //최초 사용자.
-                userInfo.userType.termType = "T";
-                userInfo.userType.period = "20220501-20220630";
-                //userInfo.userType.termType = "T";
-                //userInfo.userType.period = "202305011200-202305011300";
+
+                // 기간권유저
+                userInfo.userType.termType = "G";
+                userInfo.userType.period = "20230501-20230630";
+                //시간권유저
+                // userInfo.userType.termType = "T";
+                // userInfo.userType.period = "20230501-20230630";
 
                 let currentDate = new Date();
                 let year = currentDate.getFullYear();  // 년도
@@ -84,13 +89,13 @@ const Login = () => {
 
                 let result = dateStr.replace(/-|:/g, "");
                 console.log(`${year}-${month}-${date} ${hours}:${minutes}:${seconds}`);
+                console.log(result);
 
                 if (userInfo.userType.termType == "G") {
                     if (userInfo.userType.period.split("-")[0] <= result && userInfo.userType.period.split("-")[1] >= result) {
                         userInfo.userValid = true;
                         console.log("G : 기간권 멤버입니다.");
                         //기간권이용 버튼 빼고 모두 비활성화
-
                     } else {
                         userInfo.userValid = false;
                         console.log("G : 기간이 만료되었습니다.");
@@ -108,6 +113,7 @@ const Login = () => {
                     }
                 }
                 setUserInfo(userInfo);
+
                 navigate("/onLog");
             }
             else {
@@ -138,7 +144,7 @@ const Login = () => {
             <button className="login_btn" onClick={handleLoginClick}>
                 로그인 Login
             </button>
-            {showKeyBoard && <KeyBoard setPhoneInputValue={setPhoneInputValue} setShowKeyBoard={setShowKeyBoard} />}
+            {showKeyBoard && <KeyBoard setPhoneInputValue={setPhoneInputValue} setPasswordInputValue={setPasswordInputValue} setShowKeyBoard={setShowKeyBoard} focusPoint={focusPoint} setFocus={setFocusPoint} />}
             {isLoggedIn && <OnLog />}
         </div>
     );
