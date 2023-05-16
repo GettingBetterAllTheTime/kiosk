@@ -4,6 +4,7 @@ import KeyBoard from '../KeyBoard/KeyBoard';
 import OnLog from '../../Pages/OnLog/OnLog';
 import { useNavigate } from 'react-router-dom';
 import { MyContext } from "../../App";
+import { useEffect } from 'react';
 
 function changeDate(data) {
     if (data < 10) {
@@ -23,6 +24,13 @@ const Login = () => {
     const passwordInputRef = useRef();
 
     const navigate = useNavigate();
+
+    useEffect(() => {
+        console.log(`현재 isLoggedIn 상태는 ${isLoggedIn}입니다.`)
+        return () => {
+            setIsLoggedIn(false);
+        };
+    }, []);
 
     const handlePhoneInputClick = () => {
         setShowKeyBoard(true);
@@ -114,7 +122,7 @@ const Login = () => {
                 }
                 setUserInfo(userInfo);
 
-                navigate("/onLog");
+                navigate("/onLog", { state: { phoneInputValue: phoneInputValue } });
             }
             else {
                 alert("아이디 혹은 비밀번호가 틀립니다.")
