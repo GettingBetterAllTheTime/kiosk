@@ -67,6 +67,18 @@
     border: 1px solid black;
     border-bottom: 0 none;
     cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.logout-content {
+    display: flex;
+    align-items: center;
+}
+
+.logout button img {
+    margin-left: 10px;
 }
 
 .buyAndUse button:disabled {

@@ -6,10 +6,40 @@ import SeatLayoutModal from "../../Components/Modal/SeatLayoutModal";
 import './OnLog.css';
 import { useContext } from "react";
 import { MyContext } from "../../App";
+import { useLocation, useNavigate } from 'react-router-dom';
+import { useEffect } from "react";
+import { useState } from "react";
+import { useRef } from "react";
 
-const OnLog = ({ setIsLoggedIn }) => {
+const OnLog = () => {
     console.log('Onlog has Mounted');
     const { modal, userInfo } = useContext(MyContext);
+    const location = useLocation();
+    const phoneInputValue = location.state.phoneInputValue;
+    const [remainingTime, setRemainingTime] = useState(30);
+    const navigate = useNavigate();
+    const handleLogoutClick = () => {
+        console.log("Logout clicked!!")
+        navigate("/");
+    }
+    const intervalRef = useRef();
+    useEffect(() => {
+        intervalRef.current = setInterval(() => {
+            setRemainingTime(prevTime => prevTime - 1);
+        }, 1000);
+        return () => clearInterval(intervalRef.current);
+    }, []);
+
+    useEffect(() => {
+        if (remainingTime === 0) {
+            clearInterval(intervalRef.current);
+            navigate('/');
+        }
+    }, [remainingTime, navigate]);
+
+    if (remainingTime === 0) {
+        return null;
+    }
 
     return (
         <div className="OnLog">
@@ -90,8 +120,15 @@ const OnLog = ({ setIsLoggedIn }) => {
                 <button>이용시간연장</button>
                 <button>내정보</button>
             </div>
-            <div className='logout'>
-                <button>로그아웃</button>
+            <div className="logout">
+                <button onClick={handleLogoutClick}>
+                    <div className="logout-content">
+                        <img src={process.env.PUBLIC_URL + '/img/logout.png'} />
+                        {`로그아웃 (${phoneInputValue})`}
+                        <img src={process.env.PUBLIC_URL + '/img/remainingTime.png'} />
+                        {remainingTime}초
+                    </div>
+                </button>
             </div>
             <Footer />
             {modal === true ? <SeatLayoutModal /> : null}
