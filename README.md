@@ -44,3 +44,4 @@
 | 실시간좌석현황 | <img width=100% src="./images/실시간좌석현황.png"> |
 | 퇴실처리 | <img width=100% src="./images/퇴실처리.png"> |
 | 비밀번호변경 | <img width=100% src="./images/비밀번호변경.png"> |
+
