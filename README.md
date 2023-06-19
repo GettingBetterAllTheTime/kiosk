@@ -29,9 +29,9 @@
 # FrontEnd 구현 페이지
 
 
-| 메인화면 | <img width=50% src="./images/메인화면.png"> | 
+| 메인화면 | <img width=100% src="./images/메인화면.png"> | 
 | :--: | :--: |
-| 메인페이지 | <img width=50% src="https://user-images.githubusercontent.com/58460131/218259021-93e7ff30-fbd7-43e8-b1d5-9320d38fde87.png"> |
+| 회원가입 | <img width=50% src="./images/회원가입.png"> |
 | 상품리스트 페이지 | <img width=50% src="https://user-images.githubusercontent.com/58460131/218259143-0786a45c-006b-4f22-8e34-4ef124f89310.png"> |
 | 상세 페이지 | <img width=50% src="https://user-images.githubusercontent.com/58460131/218259170-fa32d683-9ee9-4e33-b454-e066959a8875.png"> |
 | 입찰하기 모달창 | <img width=50% src="https://user-images.githubusercontent.com/58460131/218259340-ebfa05ee-39a8-4de6-81a5-ea9ef546cb0e.png"> |
