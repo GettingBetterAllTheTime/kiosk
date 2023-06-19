@@ -36,7 +36,7 @@
 | 로그인완료 | <img width=100% src="./images/로그인완료.png"> |
 | 이용권구매 | <img width=100% src="./images/이용권구매.png"> |
 | 결제방법선택 | <img width=100% src="./images/결제방법선택.png"> |
-| 결제완료 | <img width=100% src="./images/결제완료"> |
+| 결제완료 | <img width=100% src="./images/결제완료.png"> |
 | 좌석선택 | <img width=100% src="./images/좌석선택.png"> |
 | 좌석선택_1 | <img width=100% src="./images/좌석선택_1.png"> |
 | 입실결과 | <img width=100% src="./images/입실결과.png"> |
