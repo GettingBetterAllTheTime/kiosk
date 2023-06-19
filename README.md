@@ -29,7 +29,6 @@
 # FrontEnd 구현 페이지
 
 | 카카오로그인 | <img width=50% src="https://user-images.githubusercontent.com/58460131/218258882-9a0b7801-0737-4238-a6d8-81ee40df1232.png"> |
-| :--: | :--: | :--: |
 | 메인페이지 | <img width=50% src="https://user-images.githubusercontent.com/58460131/218259021-93e7ff30-fbd7-43e8-b1d5-9320d38fde87.png"> |
 | 상품리스트 페이지 | <img width=50% src="https://user-images.githubusercontent.com/58460131/218259143-0786a45c-006b-4f22-8e34-4ef124f89310.png"> |
 | 상세 페이지 | <img width=50% src="https://user-images.githubusercontent.com/58460131/218259170-fa32d683-9ee9-4e33-b454-e066959a8875.png"> |
