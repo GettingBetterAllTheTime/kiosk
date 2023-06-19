@@ -33,10 +33,14 @@
 | :--: | :--: |
 | 이용약관동의 | <img width=100% src="./images/이용약관동의.png"> |
 | 회원가입 | <img width=100% src="./images/회원가입.png"> |
+| 로그인완료 | <img width=100% src="./images/로그인완료.png"> |
 | 이용권구매 | <img width=100% src="./images/이용권구매.png"> |
 | 결제방법선택 | <img width=100% src="./images/결제방법선택.png"> |
-| 구매하기 모달창 | <img width=100% src="./images/회원가입.png"> |
-| 결제 페이지 | <img width=100% src="./images/회원가입.png"> |
-| 판매하기 페이지 | <img width=100% src="./images/회원가입.png"> |
-| 마이 페이지 | <img width=100% src="./images/회원가입.png"> |
-
+| 결제완료 | <img width=100% src="./images/결제완료"> |
+| 좌석선택 | <img width=100% src="./images/좌석선택.png"> |
+| 좌석선택_1 | <img width=100% src="./images/좌석선택_1.png"> |
+| 입실결과 | <img width=100% src="./images/입실결과.png"> |
+| 마이페이지 | <img width=100% src="./images/마이페이지.png"> |
+| 실시간좌석현황 | <img width=100% src="./images/실시간좌석현황.png"> |
+| 퇴실처리 | <img width=100% src="./images/퇴실처리.png"> |
+| 비밀번호변경 | <img width=100% src="./images/비밀번호변경.png"> |
