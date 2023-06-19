@@ -12,7 +12,6 @@ import { MyContext } from "../../App";
 
 const Main = () => {
     const { modal } = useContext(MyContext);
-
     return (
         <div className="Main">
             {modal === true ? <SeatLayoutModal /> : null}

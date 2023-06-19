@@ -1,4 +1,8 @@
-.FindPassword_nav {
+.Join{
+    position:relative;
+}
+
+.Join_nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -6,7 +10,7 @@
     height: 50px;
 }
 
-.FindPassword>h3 {
+.Join>h3 {
     padding: 25px;
     margin-top: 30px;
     margin-bottom: 20px;
@@ -15,7 +19,7 @@
     font-size: 24px;
 }
 
-.FindPassword_nav h3 {
+.Join_nav h3 {
     display: flex;
     align-items: center;
     padding: 25px;
@@ -24,47 +28,46 @@
     font-size: 20px;
 }
 
-.FindPassword_nav h3 img {
+.Join_nav h3 img {
     margin-right: 6px;
     width: 30px;
 }
 
-.FindPassword_nav div {
+.Join_nav div {
     padding: 25px;
 }
 
-.FindPassword img {
+.Join img {
     width: 22px;
     vertical-align: middle;
 }
 
-.FindPassword_inputs {
+.Join_inputs {
     width: 80%;
     margin: 0 auto;
 }
 
-.FindPassword_input {
+.Join_input {
     display: flex;
     margin-bottom: 20px;
 }
 
-.FindPassword_input input {
+.Join_input.pw {
+    gap: 20px;
+}
+
+.Join_input input {
     justify-content: start;
-    width: 70%;
+    width: 100%;
     background: #fff;
     color: grey;
     vertical-align: middle;
-    line-height: 60px;
+    line-height: 50px;
     padding-left: 20px;
 }
 
-.FindPassword_input input[type=password]{
-    width: 100%;
-}
-
-.FindPassword_input button {
+.Join_input button {
     width: 30%;
-    padding: 22px;
     background: skyblue;
     border: 0 none;
     vertical-align: middle;
@@ -74,8 +77,8 @@
     font-weight: bold;
 }
 
-.FindPassword .prevNextBtn {
-    margin-top: 236px;
+.Join .prevNextBtn {
+    margin-top: 173px;
 }
 
 .prevNextBtn button {
@@ -84,4 +87,27 @@
     height: 80px;
     border: 1px solid black;
     border-bottom: 0 none;
+}
+
+.Join p {
+    text-align: center;
+    color: #F7D060;
+    font-size: 14px;
+    font-weight: bold;
+    margin-top: 40px;
+    line-height: 40px;
+}
+
+.gender_select span {
+    font-size: 14px;
+    color: #F7D060;
+    margin-right: 20px;
+}
+
+.radioLabel {
+    margin-right: 10px;
+}
+
+.radioText {
+    margin-left: 5px;
 }

@@ -2,28 +2,28 @@ import './KeyBoard.css';
 
 const KeyBoard = ({ setPhoneInputValue, setPasswordInputValue, setShowKeyBoard, focusPoint }) => {
     const handleKeyDown = (e) => {
-        if (focusPoint == 0) {
+        if (focusPoint === 0) {
             setPhoneInputValue(prevValue => prevValue + e.target.value);
-        } else {
+        } else if (focusPoint === 1) {
             setPasswordInputValue(prevValue => prevValue + e.target.value);
         }
     };
 
     const handleBackspace = () => {
-        if (focusPoint == 0) {
-            setPhoneInputValue((prevValue) => prevValue.slice(0, -1));
-        } else {
-            setPasswordInputValue((prevValue) => prevValue.slice(0, -1));
+        if (focusPoint === 0) {
+            setPhoneInputValue(prevValue => prevValue.slice(0, -1));
+        } else if (focusPoint === 1) {
+            setPasswordInputValue(prevValue => prevValue.slice(0, -1));
         }
     };
 
     const resetKeyboard = () => {
-        if (focusPoint == 0) {
+        if (focusPoint === 0) {
             setPhoneInputValue('');
-        } else {
+        } else if (focusPoint === 1) {
             setPasswordInputValue('');
         }
-    }
+    };
 
     return (
         <div className='KeyBoard'>

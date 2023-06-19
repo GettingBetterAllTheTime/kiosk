@@ -1,14 +1,17 @@
 import { useEffect, useState, useContext } from "react";
 import React from "react";
 import styled from "styled-components";
-import data from './data.json';
+import data from '../data.json';
 import './SeatLayoutModal.css';
 import { MyContext } from "../../App";
 import PropTypes from 'prop-types';
+import axios from "axios";
+
 
 function SeatLayoutModal() {
     const [selectedSeats, setSelectedSeats] = useState([]);
     const [seats, setSeats] = useState([]);
+    const [loading, setLoading] = useState(true);
     const { modal, setModal } = useContext(MyContext);
 
     const closeHandler = () => {
@@ -23,28 +26,58 @@ function SeatLayoutModal() {
         setSeats(data.seats);
     }, []);
 
+    useEffect(() => {
+        axios.get('/api/senddata')
+            .then(response => {
+                // 성공적으로 응답 받았을 때 실행할 작업
+                // 예: 상태 업데이트
+                console.log(response.data);
+                setSeats(response.data.data);
+                setLoading(false);
+            })
+            .catch(error => {
+                // 에러 발생 시 실행할 작업
+                // 예: 에러 처리
+                setLoading(false);
+            });
+    }, []);
+
     return (
         <div className="SeatLayoutModal">
             <div className="SeatLayoutModal_header">실시간 좌석현황</div>
+
             <div className="SeatLayoutModal_content">
-                {selectedSeats.map((seat, i) => (
-                    <SeatsInfo
-                        key={i}
-                        idseat={seat.id}
-                        nameSeat={seat.name}
-                        isavailable={seat.isavailable}
-                        isselected={seat.isselected}
-                        setSelectedSeats={setSelectedSeats}
-                        selectedSeats={selectedSeats}
-                        ischaired={seat.ischaired}
-                    />
-                ))}
+                {loading ? (
+                    <div className="loading"><img src={process.env.PUBLIC_URL + "/img/loading.gif"} alt="로딩중" /></div>
+                ) : (
+                    selectedSeats.map((seat, i) => (
+                        seat.name === seats[i].name ? (
+                            <SeatsInfo
+                                key={i}
+                                idseat={seat.id}
+                                nameSeat={seats[i].name}
+                                isavailable={seats[i].isavailable}
+                                setSelectedSeats={setSelectedSeats}
+                                selectedSeats={selectedSeats}
+                                ischaired={seats[i].ischaired}
+                                setSelectedSeatNumber={false}
+                            />
+                        ) : (
+                            <SeatsInfo
+                                key={i}
+                                idseat={seat.id}
+                                isavailable={false}
+                                setSelectedSeats={setSelectedSeats}
+                                selectedSeats={selectedSeats}
+                                ischaired={false}
+                                setSelectedSeatNumber={false}
+                            />
+                        )
+                    ))
+                )}
             </div>
+
             <div className="containerSub">
-                <div className="subtitles">
-                    <SeatsSub color={"#8DD7CF"} />
-                    <p>선택됨</p>
-                </div>
                 <div className="subtitles">
                     <SeatsSub color={"#fff"} />
                     <p>이용가능</p>
@@ -54,6 +87,7 @@ function SeatLayoutModal() {
                     <p>이용중</p>
                 </div>
             </div>
+
             <button onClick={closeHandler}>닫기</button>
         </div>
     );
@@ -61,16 +95,16 @@ function SeatLayoutModal() {
 
 export default SeatLayoutModal;
 
+
 SeatsInfo.propTypes = {
     idseat: PropTypes.number,
-    nameSeat:PropTypes.string,
-    isselected:PropTypes.bool,
-    isavailable:PropTypes.bool,
-    setSelectedSeats:PropTypes.func,
-    selectedSeats:PropTypes.array,
-    ischaired:PropTypes.bool
-  }
-
+    nameSeat: PropTypes.string,
+    isselected: PropTypes.bool,
+    isavailable: PropTypes.bool,
+    setSelectedSeats: PropTypes.func,
+    selectedSeats: PropTypes.array,
+    ischaired: PropTypes.bool
+}
 function SeatsInfo({
     idseat,
     nameSeat,
@@ -79,41 +113,26 @@ function SeatsInfo({
     setSelectedSeats,
     selectedSeats,
     ischaired,
+    setSelectSeatModal,
+    setSelectedSeatNumber
 }) {
     return (
         <Seats
             idseat={idseat}
             isavailable={isavailable.toString()}
-            isselected={isselected.toString()}
-            ischaired={ischaired.toString() }
-            onClick={(e) => {
-                changeColor(idseat, setSelectedSeats, selectedSeats);
-            }}
+            ischaired={ischaired.toString()}
         >
             {nameSeat}
         </Seats>
     );
 }
 
-function changeColor(id, setSelectedSeats, selectedSeats) {
-    const newArray = selectedSeats.map((seat) => {
-        if (id === seat.id && seat.isavailable) {
-            seat.isselected = !seat.isselected;
-        } else if (id === seat.id && !seat.isavailable) {
-            alert("이미 이용중인 좌석입니다.");
-        }
-        return seat;
-    });
-
-    setSelectedSeats(newArray);
-}
-
 const Seats = styled.div`
 background-color: ${(props) =>
-        props.ischaired=="true" ?
-            (props.isselected =="true"
+        props.ischaired == "true" ?
+            (props.isselected == "true"
                 ? "#8DD7CF" // 연두색
-                : (props.isavailable =="true"
+                : (props.isavailable == "true"
                     ? "#fff"
                     : "#FBE192"))
             : null};

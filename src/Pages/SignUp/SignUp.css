@@ -105,6 +105,83 @@ input[type=checkbox] {
 
 label[for=acceptAll] {
     background: transparent;
-    color :#F7D060;
+    color: #F7D060;
     padding-left: 0;
+}
+
+
+
+/* 모달창 */
+.SignUp_msg,
+.Terms_msg {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 420px;
+}
+
+.Terms_msg {
+    width: 600px;
+}
+
+.SignUp_msg_innerbox,
+.Terms_msg_innerbox {
+    background: #fff;
+}
+
+.SignUp_msg_innerbox_header,
+.Terms_msg_innerbox_header {
+    background: #F7D060;
+    padding: 10px;
+}
+
+.SignUp_msg_innnerbox_content {
+    width: 100%;
+    padding: 10px;
+    text-align: center;
+}
+
+.SignUp_msg_innnerbox_content p {
+    line-height: 1.2rem;
+}
+
+.Terms_msg_innnerbox_content {
+    padding: 20px;
+}
+
+.Terms_msg_innnerbox_content h3 {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.Terms_msg_innnerbox_content ul li {
+    line-height: 1.2rem;
+    letter-spacing: 0.01em;
+}
+
+.SignUp_msg_innnerbox_content_btns {
+    display: flex;
+    gap: 6px;
+    margin-top: 10px;
+}
+
+.Terms_msg_innnerbox_content_btns {
+    width: 168px;
+    margin: 20px auto;
+}
+
+.SignUp_msg_innnerbox_content_btns_btn,
+.Terms_msg_innnerbox_content_btns_btn {
+    width: 30%;
+    margin: 0 auto;
+    padding: 10px;
+    background: #ccc;
+    border: 0 none;
+    color: #fff;
+    font-weight: bold;
+}
+
+.Terms_msg_innnerbox_content_btns_btn {
+    width: 100%;
 }

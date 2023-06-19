@@ -1,0 +1,18 @@
+.Nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #F7D060;
+    height: 50px;
+    padding: 0 20px;
+}
+
+.Nav h3,
+.Nav div {
+    display: flex;
+    align-items: center;
+}
+
+.Nav img {
+    margin-right: 10px;
+}

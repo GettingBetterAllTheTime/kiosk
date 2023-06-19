@@ -1,159 +1,131 @@
-import React, { useState, useRef, useContext } from 'react';
+import React, {  useRef, useContext } from 'react';
 import './Login.css';
-import KeyBoard from '../KeyBoard/KeyBoard';
-import OnLog from '../../Pages/OnLog/OnLog';
 import { useNavigate } from 'react-router-dom';
 import { MyContext } from "../../App";
-import { useEffect } from 'react';
+import axios from 'axios';
 
-function changeDate(data) {
-    if (data < 10) {
-        data = "0" + data;
-    }
-    return data;
-}
 const Login = () => {
-    const [showKeyBoard, setShowKeyBoard] = useState(false);
-    const [phoneInputValue, setPhoneInputValue] = useState('');
-    const [passwordInputValue, setPasswordInputValue] = useState('');
-    const [focusPoint, setFocusPoint] = useState(0);
-    const [isLoggedIn, setIsLoggedIn] = useState(false);
-    const { userInfo, setUserInfo } = useContext(MyContext);
+    const {
+        setUserInfo,
+        setShowKeyBoard,
+        phoneInputValue,
+        setPhoneInputValue,
+        passwordInputValue,
+        setPasswordInputValue,
+        setFocusPoint,
+        setIsLoggedIn
+    } = useContext(MyContext);
 
     const phoneInputRef = useRef();
     const passwordInputRef = useRef();
-
     const navigate = useNavigate();
 
-    useEffect(() => {
-        console.log(`현재 isLoggedIn 상태는 ${isLoggedIn}입니다.`)
-        return () => {
-            setIsLoggedIn(false);
-        };
-    }, []);
-
-    const handlePhoneInputClick = () => {
+    const handleInputClick = (e) => {
         setShowKeyBoard(true);
-        setFocusPoint(0);
-    };
-
-    const handlePasswordInputClick = () => {
-        setShowKeyBoard(true);
-        setFocusPoint(1);
-    };
-
-    const handlePhoneInputChange = (event) => {
-        setPhoneInputValue(event.target.value);
-    };
-
-    const handlePasswordInputChange = (event) => {
-        setPasswordInputValue(event.target.value);
-    };
-
-    const handleLoginClick = () => {
-        if (phoneInputValue.length < 11) {
-            phoneInputRef.current.focus();
-        } else if (passwordInputValue.length < 4) {
-            passwordInputRef.current.focus();
-        } else {
-            if (phoneInputValue == "01050512809" && passwordInputValue == "0000") {
-                console.log(`핸드폰번호는 ${phoneInputValue} 비밀번호는 ${passwordInputValue} 입니다.`);
-                setIsLoggedIn(true);
-
-                userInfo.id = phoneInputValue;
-                userInfo.username = "연수흠";
-                userInfo.hp = phoneInputValue;
-                //최근 기간권이용자 : 기간 사용 가능
-                //최근 기간권이용자 : 기간 만료
-                //최근 시간권이용자 : 시간 이용 가능
-                //최근 시간권이용자 : 시간 만료
-                //최초 사용자.
-
-                // 기간권유저
-                userInfo.userType.termType = "G";
-                userInfo.userType.period = "20230501-20230630";
-                //시간권유저
-                // userInfo.userType.termType = "T";
-                // userInfo.userType.period = "20230501-20230630";
-
-                let currentDate = new Date();
-                let year = currentDate.getFullYear();  // 년도
-                let month = currentDate.getMonth() + 1;  // 월 (0부터 시작하므로 1을 더해줍니다.)
-                let date = currentDate.getDate();  // 일
-                let hours = currentDate.getHours();  // 시간
-                let minutes = currentDate.getMinutes();  // 분
-                let seconds = currentDate.getSeconds();  // 초
-
-                // 날짜와 시간을 문자열로 변환하여 "-"와 ":"로 구분합니다.
-
-                month = changeDate(month);
-                date = changeDate(date);
-                hours = changeDate(hours);
-                minutes = changeDate(minutes);
-                seconds = changeDate(seconds);
-
-                let dateStr = `${year}-${month}-${date}`;
-                let timsStr = `${year}-${month}-${date}-${hours}:${minutes}`;
-
-                let result = dateStr.replace(/-|:/g, "");
-                console.log(`${year}-${month}-${date} ${hours}:${minutes}:${seconds}`);
-                console.log(result);
-
-                if (userInfo.userType.termType == "G") {
-                    if (userInfo.userType.period.split("-")[0] <= result && userInfo.userType.period.split("-")[1] >= result) {
-                        userInfo.userValid = true;
-                        console.log("G : 기간권 멤버입니다.");
-                        //기간권이용 버튼 빼고 모두 비활성화
-                    } else {
-                        userInfo.userValid = false;
-                        console.log("G : 기간이 만료되었습니다.");
-                    }
-                } else if (userInfo.userType.termType == "T") {
-                    result = timsStr.replace(/-|:/g, "");
-                    if ((userInfo.userType.period.split("-")[0] <= result && userInfo.userType.period.split("-")[1] >= result)) {
-                        userInfo.userValid = true;
-                        console.log("T : 시간권 멤버입니다.");
-                        //시간권이용 버튼 빼고 모두 비활성화
-                    }
-                    else {
-                        userInfo.userValid = false;
-                        console.log("T : 시간이 만료되었습니다.");
-                    }
-                }
-                setUserInfo(userInfo);
-
-                navigate("/onLog", { state: { phoneInputValue: phoneInputValue } });
-            }
-            else {
-                alert("아이디 혹은 비밀번호가 틀립니다.")
-            }
-        };
+        if (e.target.name === "phone") {
+            setFocusPoint(0);
+        } else if (e.target.name === "password") {
+            setFocusPoint(1);
+        }
     }
+
+    const handleInputChange = (e) => {
+        if (e.target.name === "phone" ) {
+            setPhoneInputValue(e.target.value);
+        } else if (e.target.name === "password" ) {
+            setPasswordInputValue(e.target.value);
+        }
+    };
+
+    const handleLogin = () => {
+        // if (phoneInputValue.length < 11 || passwordInputValue.length < 4) {
+        //     phoneInputRef.current.focus();
+        // } else {
+
+        let loginInfo = {
+            'phone': phoneInputValue,
+            'password': passwordInputValue,
+        }
+
+        axios.post("/api/login", loginInfo)
+            .then(response => {
+                // 성공적인 응답 처리
+                console.log(response.data.user); // 서버에서 전달한 사용자 정보
+                console.log(response.data.data); // "로그인 완료됐습니다."
+                if (response.data.data === "로그인 완료됐습니다.") {
+                    setUserInfo(response.data.user); // user 객체에 MongoDB에서 가져온 사용자 정보가 들어있다고 가정
+                    setIsLoggedIn(true);
+
+                    // 몽고DB document 업데이트 요청 보내기
+                    axios.post("/api/updateLoggedInStatus", { userId: response.data.user.id })
+                        .then(updateResponse => {
+                            console.log(updateResponse.data); // 업데이트 완료 메시지 출력
+                            navigate("/onLog");
+
+                        })
+                        .catch(updateError => {
+                            console.log(updateError); // 업데이트 실패 시 에러 처리
+                        });
+                } else {
+                    console.log(response.data);
+                }
+            })
+            .catch(error => {
+                // 에러 처리
+                if (error.response) {
+                    // 서버 응답이 있는 경우
+                    console.log(error.response.data);
+                    console.log(error.response.status);
+                    console.log(error.response.headers);
+                } else if (error.request) {
+                    // 요청이 전송되었으나 응답이 없는 경우
+                    console.log(error.request);
+                } else {
+                    // 요청을 설정하는 과정에서 에러가 발생한 경우
+                    console.log('Error', error.message);
+                }
+                console.log(error.config);
+            });
+        setPhoneInputValue("");
+        setPasswordInputValue("");
+        setShowKeyBoard(false);
+        // };
+    }
+
+
+
     return (
         <div className="Login">
             <div className="login_input">
                 <input
                     type="text"
                     placeholder="휴대폰번호를 입력해주세요."
-                    onClick={handlePhoneInputClick}
-                    onChange={handlePhoneInputChange}
+                    onClick={handleInputClick}
+                    onChange={handleInputChange}
                     value={phoneInputValue}
                     ref={phoneInputRef}
+                    name="phone"
                 />
                 <input
                     type="password"
                     placeholder="비밀번호를 입력해주세요."
-                    onClick={handlePasswordInputClick}
-                    onChange={handlePasswordInputChange}
+                    onClick={handleInputClick}
+                    onChange={handleInputChange}
                     value={passwordInputValue}
                     ref={passwordInputRef}
+                    name="password"
                 />
             </div>
-            <button className="login_btn" onClick={handleLoginClick}>
+            <button type="submit" className="login_btn" onClick={handleLogin}>
                 로그인 Login
             </button>
-            {showKeyBoard && <KeyBoard setPhoneInputValue={setPhoneInputValue} setPasswordInputValue={setPasswordInputValue} setShowKeyBoard={setShowKeyBoard} focusPoint={focusPoint} setFocus={setFocusPoint} />}
-            {isLoggedIn && <OnLog />}
+            {/* {showKeyBoard &&
+                <KeyBoard
+                    setPhoneInputValue={setPhoneInputValue}
+                    setPasswordInputValue={setPasswordInputValue}
+                    setShowKeyBoard={setShowKeyBoard}
+                    focusPoint={focusPoint} />
+            } */}
         </div>
     );
 };

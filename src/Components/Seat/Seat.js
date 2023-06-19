@@ -13,8 +13,8 @@ const Seat = () => {
         <>
             <div className="seat">
                 <button type="button" onClick={modalHandler}>
-                    <img src={process.env.PUBLIC_URL + '/img/seatLayout.png'} />
-                    좌석배치 보기
+                    <img src={process.env.PUBLIC_URL + '/img/seatLayout.png'} alt='실시간 좌석현황' />
+                    실시간 좌석현황 보기
                 </button>
             </div>
         </>

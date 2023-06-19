@@ -1,0 +1,97 @@
+.BuyTime_nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #F7D060;
+    height: 50px;
+}
+
+.BuyTime>h3 {
+    padding: 25px;
+    margin-top: 30px;
+    margin-bottom: 20px;
+    text-align: center;
+    color: #F7D060;
+    font-size: 24px;
+}
+
+.BuyTime_nav h3 {
+    display: flex;
+    align-items: center;
+    padding: 25px;
+    text-align: center;
+    color: #333;
+    font-size: 20px;
+}
+
+.BuyTime_nav h3 img {
+    margin-right: 6px;
+    width: 30px;
+}
+
+.BuyTime_nav div {
+    padding: 25px;
+}
+
+.BuyTime img {
+    width: 22px;
+    vertical-align: middle;
+}
+
+.BuyTime_ticket {
+    width: 80%;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.BuyTime_ticket button {
+    width: 32%;
+    padding: 10px 20px;
+    background: transparent;
+    border: 1px solid #F7D060;
+}
+
+.BuyTime_ticket button h4 {
+    line-height: 1.8em;
+    color: #F7D060;
+}
+
+.BuyTime_ticket button p {
+    line-height: 1.8em;
+    color: #FFF;
+    font-weight: bold;
+}
+
+.BuyTime_ticket button:focus {
+    background-color: rgb(220, 220, 4);
+}
+
+.BuyTime_ticket button:focus h4 {
+    color: black;
+}
+
+.BuyTime_ticket button:focus p {
+    color: white;
+}
+
+.BuyTime_notice {
+    color: #fff;
+    font-weight: bold;
+    font-size: 14px;
+    width: 80%;
+    margin: 80px auto;
+}
+
+.BuyTime .prevNextBtn {
+    margin-top: 215px;
+}
+
+.prevNextBtn button {
+    background: #F7D060;
+    width: 50%;
+    height: 80px;
+    border: 1px solid black;
+    border-bottom: 0 none;
+}
