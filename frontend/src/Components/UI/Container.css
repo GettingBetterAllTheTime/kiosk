@@ -1,0 +1,12 @@
+.Container {
+    width: 700px;
+    height: 900px;
+    margin: 20px auto;
+    background: #565050;
+}
+
+@media screen and (max-width: 700px) {
+    .Container {
+        width: 90vw;
+    }
+}

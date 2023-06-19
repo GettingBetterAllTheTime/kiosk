@@ -1,0 +1,71 @@
+.onload {
+    width: 90%;
+    margin: 10px auto;
+    color: #333;
+    font-family: Arial, sans-serif;
+}
+
+.MyInfo_content table {
+    border-collapse: collapse;
+    width: 100%;
+    margin-bottom: 12px;
+}
+
+.MyInfo_content table:last-child {
+    margin-bottom: 71px;
+}
+
+.MyInfo_content caption {
+    color: #F7D060;
+    font-size: 20px;
+    line-height: 6px;
+    border-bottom: 2px solid #F7D060;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    width: max-content;
+    padding-left: 30px;
+    padding-right: 30px;
+    margin: 10px auto 20px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.MyInfo_content th,
+.MyInfo_content td {
+    padding: 10px;
+    text-align: left;
+    background: #fff;
+}
+
+.MyInfo_content th {
+    background-color: #F7D060;
+    color: #333;
+    font-weight: bold;
+}
+
+.MyInfo_content button {
+    padding: 5px 10px;
+    background-color: #F7D060;
+    color: #333;
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.MyInfo_content button:hover {
+    background-color: #ffc107;
+}
+
+.MyInfo_content .loading {
+    background: #fff;
+    width: 700px;
+    height: 741px;
+    margin: 0 auto;
+}
+
+.MyInfo_content .loading img {
+    display: block;
+    margin: 0px auto;
+    width: 100%;
+}

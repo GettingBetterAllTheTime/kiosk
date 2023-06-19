@@ -1,0 +1,40 @@
+.EntranceResult_h3 {
+    padding: 25px;
+    margin-top: 30px;
+    margin-bottom: 20px;
+    text-align: center;
+    color: #F7D060;
+    font-size: 24px;
+}
+
+.EntranceResult_content {
+    width: 80%;
+    margin: 0 auto;
+}
+
+.EntranceResult_content p {
+    color: #F7D060;
+    font-weight: bold;
+    font-size: 14px;
+    line-height: 2em;
+}
+
+.EntranceResult_msg {
+    color: #fff;
+    text-align: center;
+    border: 1px solid #F7D060;
+    margin: 70px;
+    padding: 30px;
+}
+
+.EntranceResult_btn button {
+    width: 260px;
+    display: block;
+    margin: 0 auto;
+    padding: 20px 10px;
+    background: skyblue;
+    border: 0 none;
+    color: #fff;
+    font-weight: bold;
+    margin-bottom: 262px;
+}

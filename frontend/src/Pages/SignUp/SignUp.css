@@ -1,0 +1,187 @@
+.SignUp_nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #F7D060;
+    height: 50px;
+}
+
+.SignUp>h3 {
+    padding: 25px;
+    margin-top: 30px;
+    margin-bottom: 20px;
+    text-align: center;
+    color: #F7D060;
+    font-size: 24px;
+}
+
+.SignUp_nav h3 {
+    display: flex;
+    align-items: center;
+    padding: 25px;
+    text-align: center;
+    color: #333;
+    font-size: 20px;
+}
+
+.SignUp_nav h3 img {
+    margin-right: 6px;
+    width: 30px;
+}
+
+.SignUp_nav div {
+    padding: 25px;
+}
+
+.SignUp img {
+    width: 22px;
+    vertical-align: middle;
+}
+
+.SignUp_inputs {
+    width: 80%;
+    margin: 0 auto;
+
+}
+
+.SignUp_input {
+    display: flex;
+    margin-bottom: 20px;
+}
+
+input[type=checkbox] {
+    margin-right: 10px;
+    width: 24px;
+}
+
+.SignUp_inputs>div:last-child {
+    margin-top: 30px;
+}
+
+.SignUp label {
+    color: #F7D060;
+    font-weight: bold;
+    font-size: 14px;
+}
+
+
+.SignUp_input input {
+    justify-content: start;
+}
+
+.SignUp_input label {
+    width: 80%;
+    background: #fff;
+    color: grey;
+    vertical-align: middle;
+    justify-content: center;
+    line-height: 60px;
+    padding-left: 20px;
+}
+
+.SignUp_input button {
+    width: 20%;
+    padding: 22px;
+    background: skyblue;
+    border: 0 none;
+    vertical-align: middle;
+    justify-content: end;
+    font-size: 12px;
+    color: #fff;
+    font-weight: bold;
+}
+
+.prevNextBtn {
+    margin-top: 225px;
+}
+
+.prevNextBtn button {
+    background: #F7D060;
+    width: 50%;
+    height: 80px;
+    border: 1px solid black;
+    border-bottom: 0 none;
+}
+
+label[for=acceptAll] {
+    background: transparent;
+    color: #F7D060;
+    padding-left: 0;
+}
+
+
+
+/* 모달창 */
+.SignUp_msg,
+.Terms_msg {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 420px;
+}
+
+.Terms_msg {
+    width: 600px;
+}
+
+.SignUp_msg_innerbox,
+.Terms_msg_innerbox {
+    background: #fff;
+}
+
+.SignUp_msg_innerbox_header,
+.Terms_msg_innerbox_header {
+    background: #F7D060;
+    padding: 10px;
+}
+
+.SignUp_msg_innnerbox_content {
+    width: 100%;
+    padding: 10px;
+    text-align: center;
+}
+
+.SignUp_msg_innnerbox_content p {
+    line-height: 1.2rem;
+}
+
+.Terms_msg_innnerbox_content {
+    padding: 20px;
+}
+
+.Terms_msg_innnerbox_content h3 {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.Terms_msg_innnerbox_content ul li {
+    line-height: 1.2rem;
+    letter-spacing: 0.01em;
+}
+
+.SignUp_msg_innnerbox_content_btns {
+    display: flex;
+    gap: 6px;
+    margin-top: 10px;
+}
+
+.Terms_msg_innnerbox_content_btns {
+    width: 168px;
+    margin: 20px auto;
+}
+
+.SignUp_msg_innnerbox_content_btns_btn,
+.Terms_msg_innnerbox_content_btns_btn {
+    width: 30%;
+    margin: 0 auto;
+    padding: 10px;
+    background: #ccc;
+    border: 0 none;
+    color: #fff;
+    font-weight: bold;
+}
+
+.Terms_msg_innnerbox_content_btns_btn {
+    width: 100%;
+}

@@ -1,0 +1,39 @@
+.CertNum {
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 420px;
+}
+
+.CertNum_innerbox {
+    background: #fff;
+}
+
+.CertNum_innerbox_header {
+    background: #F7D060;
+    padding: 10px;
+}
+
+.CertNum_innerbox_content {
+    width: 100%;
+    padding: 10px;
+}
+
+.CertNum_innerbox_content p {
+    padding: 10px;
+    color: #6b6a81;
+    margin-top: 0;
+}
+
+.CertNum_innerbox_content_btns_btn {
+    width: 50%;
+    padding: 10px;
+    background: skyblue;
+    border: 0 none;
+    color: #fff;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    margin: 10px auto;
+}
