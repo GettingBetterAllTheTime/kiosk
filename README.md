@@ -31,12 +31,12 @@
 
 | 메인화면 | <img width=100% src="./images/메인화면.png"> | 
 | :--: | :--: |
-| 회원가입 | <img width=50% src="./images/회원가입.png"> |
-| 상품리스트 페이지 | <img width=50% src="https://user-images.githubusercontent.com/58460131/218259143-0786a45c-006b-4f22-8e34-4ef124f89310.png"> |
-| 상세 페이지 | <img width=50% src="https://user-images.githubusercontent.com/58460131/218259170-fa32d683-9ee9-4e33-b454-e066959a8875.png"> |
-| 입찰하기 모달창 | <img width=50% src="https://user-images.githubusercontent.com/58460131/218259340-ebfa05ee-39a8-4de6-81a5-ea9ef546cb0e.png"> |
-| 구매하기 모달창 | <img width=50% src="https://user-images.githubusercontent.com/58460131/218259368-5cf7fa1a-5f15-4243-ab07-720c65aa87a5.png"> |
-| 결제 페이지 | <img width=50% src="https://user-images.githubusercontent.com/58460131/218259389-6370460a-b4fc-44f4-a917-8fcfbc4f9503.png"> |
-| 판매하기 페이지 | <img width=50% src="https://user-images.githubusercontent.com/58460131/218259418-6fe72f22-1035-4330-b1d5-7f96b346f1eb.png"> |
-| 마이 페이지 | <img width=50% src="https://user-images.githubusercontent.com/58460131/218259451-a7daf4c7-5616-4b23-b6fd-10b765733c7f.png"> |
+| 이용약관동의 | <img width=100% src="./images/이용약관동의.png"> |
+| 회원가입 | <img width=100% src="./images/회원가입.png"> |
+| 이용권구매 | <img width=100% src="./images/이용권구매.png"> |
+| 결제방법선택 | <img width=100% src="./images/결제방법선택.png"> |
+| 구매하기 모달창 | <img width=100% src="./images/회원가입.png"> |
+| 결제 페이지 | <img width=100% src="./images/회원가입.png"> |
+| 판매하기 페이지 | <img width=100% src="./images/회원가입.png"> |
+| 마이 페이지 | <img width=100% src="./images/회원가입.png"> |
 
