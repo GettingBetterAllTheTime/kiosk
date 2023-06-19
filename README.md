@@ -20,6 +20,6 @@
 | <img src="https://techstack-generator.vercel.app/react-icon.svg" alt="icon" width="65" height="65" /> | <img src="https://techstack-generator.vercel.app/nginx-icon.svg" alt="icon" width="65" height="65" /> | <img src="https://img.shields.io/badge/express-000000?style=for-the-badge&logo=express&logoColor=white"> | <img src="https://img.shields.io/badge/mongoDB-47A248?style=for-the-badge&logo=MongoDB&logoColor=white"> | <img src="https://techstack-generator.vercel.app/aws-icon.svg" alt="icon" width="65" height="65" />
 
 # 데모 영상
-<a href="">🔗 Wehicle 데모영상 </a>
+<a href="#">🔗 스터디카페 데모영상 </a>
 
 </br>
