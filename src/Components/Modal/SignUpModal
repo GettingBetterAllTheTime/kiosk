@@ -1,9 +1,0 @@
-const SignUpModal = () => {
-    return (
-        <>
-        
-        </>
-    )
-}
-
-export default SignUpModal;
