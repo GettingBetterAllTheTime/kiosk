@@ -11,5 +11,5 @@
 #기술스택
 |React|Node|Express|MongoDB|AWS|
 | :--: | :--: | :--: | :--: | :--: |
-| <img src="https://techstack-generator.vercel.app/react-icon.svg" alt="icon" width="65" height="65" /> | <img src="https://techstack-generator.vercel.app/nginx-icon.svg" alt="icon" width="65" height="65" /> | <img src="https://techstack-generator.vercel.app/aws-icon.svg" alt="icon" width="65" height="65" />| <img src="https://media.gophy.com/medai/WjW94M0OMFawh1F0Wv/giphy.gif" alt="icon" width="65" height="65" />| <img src="[mongodb](https://github.com/GettingBetterAllTheTime/kiosk/assets/110766207/d930ed1d-cfb7-457e-9f64-2fe006bb3809)" width="65" height="65" />
+| <img src="https://techstack-generator.vercel.app/react-icon.svg" alt="icon" width="65" height="65" /> | <img src="https://techstack-generator.vercel.app/nginx-icon.svg" alt="icon" width="65" height="65" /> | <img src="https://techstack-generator.vercel.app/aws-icon.svg" alt="icon" width="65" height="65" />| <img src="![mongodb](https://github.com/GettingBetterAllTheTime/kiosk/assets/110766207/d930ed1d-cfb7-457e-9f64-2fe006bb3809)" alt="icon" width="65" height="65" />| <img src="[mongodb](https://github.com/GettingBetterAllTheTime/kiosk/assets/110766207/d930ed1d-cfb7-457e-9f64-2fe006bb3809)" width="65" height="65" />
 
