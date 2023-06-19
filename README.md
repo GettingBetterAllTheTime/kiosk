@@ -21,7 +21,7 @@
 </br>
 
 # 데모 영상
-<a href="#">🔗 스터디카페 데모영상 </a>
+<a href="https://youtu.be/7rTrMRoc55g">🔗 스터디카페 데모영상 </a>
 
 </br>
 
